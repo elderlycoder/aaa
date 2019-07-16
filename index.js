@@ -81,11 +81,25 @@ app.post("/addservice", urlencodedParser, function (req, res) {
    const adress = req.body.adress;
    const rezhim = req.body.rezhim;
    const email = req.body.email;
-   const oper = Number(req.body.oper);
+   const oper = req.body.raboty;
+   console.log(req.body);
+   // function getCheckedCheckBoxes() {
+   //    let checkboxes = req.body.querySelectorAll('#raboty');
+   //    let checkboxesChecked = []; // можно в массиве их хранить, если нужно использовать 
+   //    for (var i = 0; i < checkboxes.length; i++) {
+   //       if (checkboxes[i].checked) {
+   //          checkboxesChecked.push(checkboxes[i].value); // положим в массив выбранный
+   //          alert(checkboxes[i].value); // делайте что нужно - это для наглядности
+   //       }
+   //    }
+   //    return checkboxesChecked; // для использования в нужном месте
+   //  }
+   //  getCheckedCheckBoxes();
+   // console.log(checkboxesChecked);
    
-   con.query("INSERT INTO service (name, city, adress, rezhim, email, id_oper) VALUES (?,?,?,?,?,?)", [name, city, adress, rezhim, email, oper], function(err, data) {
+   con.query("INSERT INTO service (name, city, adress, rezhim, email, oper) VALUES (?,?,?,?,?,?)", [name, city, adress, rezhim, email, oper], function(err, data) {
      if(err) return console.log(err);
-     res.redirect("/addservice");
+     res.redirect("/addservice"); // позже сменить адрес на страницу "поздрадляем, в письме ссылка для доступа в личный кабинет"
    });
 });
 // список предлагаемых услуг

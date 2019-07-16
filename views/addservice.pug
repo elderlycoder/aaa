@@ -4,22 +4,53 @@ h2 Это страница добавления сервиса
 p #{foo}
 h3 #{bar}
 form(action="/addservice" method="POST")
-    p Название: 
-      input(type="text" name="name" placeholder="")
-    p Город: 
-      input(type="text" name="city" placeholder="")
-    p Адрес: 
-      input(type="text" name="adress")
-    p Режим работы: 
-      input(type="text" name="rezhim")
-    p 
-      label(for="email") Контактный e-mail: 
-        input(type="email" name="email")
-    p Специализация: 
-      select(size="3" multiple name="oper")
-         option(value="1") кузовной ремонт
-         option(value="2") шиномонтаж
-         option(value="3") мойка
-         option(value="4") электрика
-    p  
+  ul(class="flex-outer")
+    li
+      label(for="name") Название: 
+      input(type="text" id="name" name="name" placeholder="Введите название сервиса")
+    li
+      label(for="city") Город: 
+      input(type="text" id="city" name="city" placeholder="Введите город")
+    li
+      label(for="adress") Адрес: 
+      input(type="text" id="adress" name="adress" placeholder="Введите адрес")
+    li
+      label(for="rezhim") Режим раб: 
+      input(type="text" id="rezhim" name="rezhim" placeholder="Укажите режим работы")
+    li
+      label(for="email") Контактный e-mail:  
+      input(type="email" id="email" name="email" placeholder="Введите email")
+    li
+      p Специализация: 
+      ul(class="flex-inner")
+        li
+          input(type="checkbox" value="1" name="raboty")
+          | кузовной ремонт
+        li
+          input(type="checkbox" value="2" name="raboty") 
+          | шиномонтаж
+        li
+          input(type="checkbox" value="3" name="raboty") 
+          | автомойка
+        li
+          input(type="checkbox" value="4" name="raboty") 
+          | электрика
+        li
+          input(type="checkbox" value="5" name="raboty") 
+          | техническое обслуживание
+        li
+          input(type="checkbox" value="6" name="raboty") 
+          | ремонт подвески
+        li
+          input(type="checkbox" value="7" name="raboty") 
+          | тормозная система
+    
+    
+    //- p Специализация: 
+    //-   select(size="3" multiple name="oper")
+    //-      option(value="1") кузовной ремонт
+    //-      option(value="2") шиномонтаж
+    //-      option(value="3") мойка
+    //-      option(value="4") электрика
+    li  
       input(type="submit")
