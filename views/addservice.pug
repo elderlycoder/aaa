@@ -1,0 +1,25 @@
+include header.pug
+
+h2 Это страница добавления сервиса
+p #{foo}
+h3 #{bar}
+form(action="/addservice" method="POST")
+    p Название: 
+      input(type="text" name="name" placeholder="")
+    p Город: 
+      input(type="text" name="city" placeholder="")
+    p Адрес: 
+      input(type="text" name="adress")
+    p Режим работы: 
+      input(type="text" name="rezhim")
+    p 
+      label(for="email") Контактный e-mail: 
+        input(type="email" name="email")
+    p Специализация: 
+      select(size="3" multiple name="oper")
+         option(value="1") кузовной ремонт
+         option(value="2") шиномонтаж
+         option(value="3") мойка
+         option(value="4") электрика
+    p  
+      input(type="submit")
