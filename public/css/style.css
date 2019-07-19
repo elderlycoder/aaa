@@ -26,3 +26,88 @@ ul.FlexString li {
    text-overflow: ellipsis;
    white-space: nowrap;
 }
+/* стили для страницы добавления сервиса addservice.pug */
+.flex-outer {
+   max-width: 900px;
+   margin: 0 auto;
+ }
+.flex-outer li,
+.flex-inner {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+}
+.flex-inner {
+   padding: 0 8px;
+   justify-content: space-between;  
+ }
+
+ .flex-inner {
+   padding: 0 8px;
+   justify-content: space-between;  
+ }
+ 
+ .flex-outer > li:not(:last-child) {
+   margin-bottom: 20px;
+ }
+ 
+ .flex-outer li label,
+ .flex-outer li p {
+   padding: 8px;
+   font-weight: 300;
+   letter-spacing: .09em;
+   text-transform: uppercase;
+ }
+
+.flex-outer > li > label,
+.flex-outer li p {
+  flex: 1 0 120px;
+  max-width: 220px;
+}
+ 
+.flex-outer > li > label + *,
+.flex-inner {
+  flex: 1 0 220px;
+}
+
+.flex-outer li p {
+   margin: 0;
+ }
+ 
+.flex-outer li input:not([type='checkbox']),
+.flex-outer li textarea {
+  padding: 10px;
+}
+
+.flex-outer li button {
+   margin-left: auto;
+   padding: 8px 16px;
+   border: none;
+   background: #333;
+   color: #f2f2f2;
+   text-transform: uppercase;
+   letter-spacing: .09em;
+   border-radius: 3px;
+ }
+
+.flex-inner li {
+   width: 280px;
+   padding: 5px;
+ }
+.flex-outer ul {
+   border: 1px solid black;
+}
+.tip-addservice {
+   text-decoration: underline;
+   margin: 5px;
+   padding: 3px;
+}
+
+/*стили вехнего меню*/
+.header-nav {
+  font-size: large;
+  padding: 10px;
+}
+.header-nav a {
+  text-decoration: none;
+}

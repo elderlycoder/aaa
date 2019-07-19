@@ -1,7 +1,9 @@
-include header.pug
-
-h2 Это страница выводит все сервисы
-p #{foo}
-h3 #{bar}
-each val, index in services
-   p Название: #{val['name']+ val['city']}
+extends header.pug
+block variables
+   - var pageTitle = 'Все автосервисы. Контакты, режим работы, услуги, отзывы'
+block content
+   h2 Это страница выводит все сервисы
+   p #{foo}
+   h3 #{bar}
+   each val, index in services
+      p Название: #{val['name']+ val['city']}

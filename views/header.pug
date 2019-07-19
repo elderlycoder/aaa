@@ -1,3 +1,4 @@
+block variables
 html
    head
       meta(charset='utf-8')
@@ -9,6 +10,14 @@ html
          rel='stylesheet'
          href='css/style.css'
       )
-      title Моё приложение
+      link(
+         rel='stylesheet'
+         href='css/modal.css'
+      )
+      title= pageTitle
    body
-      h1 Это HEADER
+      div(class="header-nav")
+         a(href="/raboty") Виды работ   |
+         a(href="/addservice")  + Добавить сервис  |
+         a(href="/services")  Все сервисы
+      block content

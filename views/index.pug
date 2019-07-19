@@ -1,0 +1,111 @@
+extends header.pug
+block variables
+   - var pageTitle = 'Все автосервисы. Контакты, режим работы, услуги, отзывы'
+block content
+    button(class="modal-show" data-modal="#sign-in") Выберете город
+        div(class="modal-wrap hide")
+            div(class="modal hide" id="sign-in")
+                div(class="modal-header")
+                    h3(class="modal-h3") Модальное окно с регионами
+                    span(class="btn-close modal-close" data-modal="#sign-in") &times;
+                div
+                    a(href="#" class="modal-close" data-modal="#sign-in") Костромская область
+                
+                div(class="row-modal")
+                    ul
+                        li Астрахань
+                        li Волгоград
+                        li Воронеж
+                        li Екатеринбург
+                        li Ижевск
+                        li Казань
+                        li Краснодар            
+                            
+                    ul
+                        li Липецк
+                        li Москва
+                        li Нижний Новгород
+                        li Новгород
+                        li Новосибирск
+                        li Омск
+                        li Самара                  
+                    
+                    ul
+                        li Санкт Петербург
+                        li Саратов
+                        li Тамбов
+                        li Тюмень
+                        li Уфа
+                        li Челябинск
+                        li Ярославль             
+                     
+    button(class="modal-show" data-modal="#sign-in2") Укажите марку
+    div(class="modal-wrap hide")
+        div(class="modal hide" id="sign-in2")
+            div(class="modal-header")
+                h3(class="modal-h3") Модальное окно с марками
+                span(class="btn-close modal-close" data-modal="#sign-in") &times;
+                
+            div(class="row-modal")
+                ul
+                    li Lada (ВАЗ)
+                    li Audi
+                    li BMW
+                    li Cadillac
+                    li Chery
+                    li Chevrolet
+                    li Citroen            
+                ul
+                    li Lada (ВАЗ)
+                    li Audi
+                    li BMW
+                    li Cadillac
+                    li Chery
+                    li Chevrolet
+                    li Citroen             
+                ul
+                    li Lada (ВАЗ)
+                    li Audi
+                    li BMW
+                    li Cadillac
+                    li Chery
+                    li Chevrolet
+                    li Citroen             
+                
+    div(style="clear: both;")
+    div(class="tabs div-wrap")
+        ul
+            li(class="tab" data="1") ТО
+            li(class="tab" data="2") Сервисное
+            li(class="tab" data="3") Ходовая
+            li(class="tab" data="4") КПП
+            li(class="tab" data="5") Кузов
+        
+    div(class="div-wrap")
+        div(class="tab-body" data="1")
+            p Замена масляного фильтра
+            p Замена масла
+    
+        div(class="tab-body" data="2")
+            p
+                input(type="checkbox")
+                | Заправка кондиционера
+            p
+                input(type="checkbox") 
+                | Установка сигнализации
+        
+        div(class="tab-body" data="3")
+            p Замена сайлентблоков
+            p Замена амортизатора
+        
+        div(class="tab-body" data="4")
+            p Ремонт вариатора
+            p Замена масла АКПП
+        
+        div(class="tab-body" data="5")
+            p Покраска бампера
+            p Покраска крыла
+        
+    div(id="vyvod")
+    
+    script(src="js/modal.js")  

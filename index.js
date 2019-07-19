@@ -54,6 +54,9 @@ app.listen(3000, function () {
 //    });
 
 // код для вывода списка сервисов
+app.get("/", function(req, res){ // при обращении по адресу /addservice
+   res.render("index");  // Вывод шаблона представления
+});
 app.get('/services', function (req, res) { //путь в адресной строке 
    console.log(req.query);
    var sql = "SELECT * FROM `service`";
@@ -75,29 +78,20 @@ app.get("/addservice", function(req, res){ // при обращении по а�
 
 app.post("/addservice", urlencodedParser, function (req, res) {
          
-   if(!req.body) return res.sendStatus(400);
+   if (!req.body) return res.sendStatus(400);
    const name = req.body.name;
    const city = req.body.city;
    const adress = req.body.adress;
    const rezhim = req.body.rezhim;
    const email = req.body.email;
-   const oper = req.body.raboty;
-   console.log(req.body);
-   // function getCheckedCheckBoxes() {
-   //    let checkboxes = req.body.querySelectorAll('#raboty');
-   //    let checkboxesChecked = []; // можно в массиве их хранить, если нужно использовать 
-   //    for (var i = 0; i < checkboxes.length; i++) {
-   //       if (checkboxes[i].checked) {
-   //          checkboxesChecked.push(checkboxes[i].value); // положим в массив выбранный
-   //          alert(checkboxes[i].value); // делайте что нужно - это для наглядности
-   //       }
-   //    }
-   //    return checkboxesChecked; // для использования в нужном месте
-   //  }
-   //  getCheckedCheckBoxes();
-   // console.log(checkboxesChecked);
+   const phone1 = req.body.phone1;
+   const phone2 = req.body.phone2;
+   const oper =Array.prototype.join.call(req.body.raboty, ",");
+   const oplata = Array.prototype.join.call(req.body.oplata, ",");
+   const desc = req.body.desc;
    
-   con.query("INSERT INTO service (name, city, adress, rezhim, email, oper) VALUES (?,?,?,?,?,?)", [name, city, adress, rezhim, email, oper], function(err, data) {
+   
+   con.query("INSERT INTO service (name, city, adress, rezhim, email, phone1, phone2, oper, oplata, description) VALUES (?,?,?,?,?,?,?,?,?,?)", [name, city, adress, rezhim, email, phone1, phone2, oper, oplata, desc], function(err, data) {
      if(err) return console.log(err);
      res.redirect("/addservice"); // позже сменить адрес на страницу "поздрадляем, в письме ссылка для доступа в личный кабинет"
    });
